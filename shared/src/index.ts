@@ -6,10 +6,10 @@
  */
 
 // Export all constants
-export * from './constants'
+export * from './constants.js'
 
 // Export all utilities
-export * from './utils'
+export * from './utils.js'
 
 // Re-export types for convenience
-export type { TokenStatus } from './constants'
+export type { TokenStatus } from './constants.js'
