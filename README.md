@@ -4,21 +4,21 @@ A lightweight full-stack application for managing API access tokens across multi
 
 ## Features
 
-✅ **Token Management** - View tokens from multiple services (GitHub, AWS, Stripe, etc.)
-✅ **Add New Tokens** - Create new tokens with service name, token value, and expiry date
-✅ **Auto-Generate Tokens** - Smart token generation based on service name with correct prefixes
-✅ **Seed Random Tokens** - Generate 10 random tokens per click for testing (mix of expired and active)
-✅ **Smart Filtering** - Filter by service name or show expired tokens only
-✅ **Token Renewal** - One-click token renewal with instant feedback
-✅ **Token Deletion** - Delete tokens with confirmation dialog and "don't show again" option
-✅ **Copy to Clipboard** - One-click copy for token values with toast confirmation
-✅ **Table Sorting** - Sort by service name, expiry date, or status (ascending/descending)
-✅ **Pagination** - Client-side pagination with configurable items per page (persisted to localStorage)
-✅ **Theme Toggle** - Light/Dark/System theme with localStorage persistence
-✅ **Professional UI** - Clean, modern interface built with shadcn/ui
-✅ **Responsive Design** - Works seamlessly on desktop and mobile
-✅ **Real-time Status** - Automatic status calculation based on expiry dates
-✅ **Toast Notifications** - Success/error feedback for all operations
+- ✅ **Token Management** - View tokens from multiple services (GitHub, AWS, Stripe, etc.)
+- ✅ **Add New Tokens** - Create new tokens with service name, token value, and expiry date
+- ✅ **Auto-Generate Tokens** - Smart token generation based on service name with correct prefixes
+- ✅ **Seed Random Tokens** - Generate 10 random tokens per click for testing (mix of expired and active)
+- ✅ **Smart Filtering** - Filter by service name or show expired tokens only
+- ✅ **Token Renewal** - One-click token renewal with instant feedback
+- ✅ **Token Deletion** - Delete tokens with confirmation dialog and "don't show again" option
+- ✅ **Copy to Clipboard** - One-click copy for token values with toast confirmation
+- ✅ **Table Sorting** - Sort by service name, expiry date, or status (ascending/descending)
+- ✅ **Pagination** - Client-side pagination with configurable items per page (persisted to localStorage)
+- ✅ **Theme Toggle** - Light/Dark/System theme with localStorage persistence
+- ✅ **Professional UI** - Clean, modern interface built with shadcn/ui
+- ✅ **Responsive Design** - Works seamlessly on desktop and mobile
+- ✅ **Real-time Status** - Automatic status calculation based on expiry dates
+- ✅ **Toast Notifications** - Success/error feedback for all operations
 
 ## Tech Stack
 
