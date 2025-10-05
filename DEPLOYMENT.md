@@ -107,7 +107,7 @@ If you prefer manual setup or need more control:
      - **Root Directory**: Leave empty (uses root)
      - **Runtime**: Node
      - **Build Command**: `pnpm install && pnpm build:shared && pnpm build:server`
-     - **Start Command**: `cd server && pnpm start`
+     - **Start Command**: `node server/dist/index.js`
      - **Plan**: Free
 
 2. **Environment Variables**

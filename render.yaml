@@ -9,7 +9,7 @@ services:
     region: oregon
     plan: free
     buildCommand: pnpm install && pnpm build:shared && pnpm build:server
-    startCommand: cd server && pnpm start
+    startCommand: node server/dist/index.js
     envVars:
       - key: NODE_ENV
         value: production
