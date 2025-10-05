@@ -1,0 +1,19 @@
+{
+  "name": "@palm/shared",
+  "version": "1.0.0",
+  "description": "Shared types, constants, and utilities for Palm Assessment",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["shared", "types", "constants"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

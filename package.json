@@ -1,0 +1,19 @@
+{
+  "name": "palm-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Access Manager - Full-stack token management application",
+  "scripts": {
+    "dev:client": "pnpm --filter client dev",
+    "dev:server": "pnpm --filter server dev",
+    "build:shared": "pnpm --filter @palm/shared build",
+    "build:client": "pnpm --filter client build",
+    "build:server": "pnpm --filter server build",
+    "build": "pnpm build:shared && pnpm build:client && pnpm build:server",
+    "install:all": "pnpm install"
+  },
+  "keywords": ["monorepo", "pnpm-workspace"],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1"
+}
