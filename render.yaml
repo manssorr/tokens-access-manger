@@ -1,0 +1,39 @@
+# Render Blueprint for Access Manager
+# Deploys both backend API and frontend static site
+
+services:
+  # Backend API Server
+  - type: web
+    name: access-manager-api
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: pnpm install && pnpm build:shared && pnpm build:server
+    startCommand: cd server && pnpm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: FRONTEND_URL
+        sync: false # Set this in Render dashboard after frontend is deployed
+    healthCheckPath: /health
+
+  # Frontend Static Site
+  - type: static
+    name: access-manager-app
+    env: static
+    region: oregon
+    plan: free
+    buildCommand: pnpm install && pnpm build:shared && pnpm build:client
+    staticPublishPath: ./client/dist
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+    envVars:
+      - key: VITE_API_URL
+        sync: false # Set this in Render dashboard to backend URL

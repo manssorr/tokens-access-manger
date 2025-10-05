@@ -332,6 +332,44 @@ pnpm watch    # Watch mode for development
 pnpm clean    # Remove dist/ folder
 ```
 
+## Deployment
+
+This application can be deployed to Render.com using the included blueprint configuration.
+
+### Quick Deploy to Render
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+**One-Click Deployment:**
+1. Click the button above (or manually create services in Render)
+2. Connect your GitHub repository
+3. Render will automatically detect `render.yaml`
+4. Review and deploy both services (backend + frontend)
+5. Update environment variables after deployment (see below)
+
+### Environment Variables
+
+After deployment, update these in the Render dashboard:
+
+**Backend (`access-manager-api`):**
+- `CORS_ORIGINS` - Set to your frontend URL
+- `FRONTEND_URL` - Set to your frontend URL
+
+**Frontend (`access-manager-app`):**
+- `VITE_API_URL` - Set to your backend URL
+
+### Detailed Deployment Guide
+
+For complete deployment instructions, troubleshooting, and configuration options, see **[DEPLOYMENT.md](DEPLOYMENT.md)**.
+
+### Live Demo
+
+Once deployed, your app will be available at:
+- Frontend: `https://your-app-name.onrender.com`
+- Backend API: `https://your-api-name.onrender.com`
+
+---
+
 ## License
 
 ISC

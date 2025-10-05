@@ -88,3 +88,16 @@ Visit http://localhost:5173
 - Read [README.md](README.md) for complete documentation
 - Check [docs/](docs/) folder for technical details
 - Review [plans/](plans/) folder for implementation notes
+
+## Deployment
+
+Ready to deploy your app to production?
+
+**Quick Deploy to Render (Free):**
+1. Push your code to GitHub
+2. Follow the [RENDER_QUICK_START.md](RENDER_QUICK_START.md) guide (5 minutes)
+3. Or see [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions
+
+Your app will be live at:
+- Frontend: `https://your-app-name.onrender.com`
+- Backend: `https://your-api-name.onrender.com`

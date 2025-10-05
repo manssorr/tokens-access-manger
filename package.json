@@ -10,6 +10,7 @@
     "build:client": "pnpm --filter client build",
     "build:server": "pnpm --filter server build",
     "build": "pnpm build:shared && pnpm build:client && pnpm build:server",
+    "start": "cd server && pnpm start",
     "install:all": "pnpm install"
   },
   "keywords": ["monorepo", "pnpm-workspace"],

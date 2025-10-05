@@ -1,0 +1,25 @@
+# Files to ignore during Render deployment
+
+# Documentation (not needed in production)
+docs/
+plans/
+CLAUDE.md
+*.md
+!README.md
+!DEPLOYMENT.md
+
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test files
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# Local environment files
+.env.local
+.env.development.local
