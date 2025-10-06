@@ -59,13 +59,14 @@ function App() {
     <ThemeProvider defaultTheme="system" storageKey="access-manager-theme">
       <TooltipProvider delayDuration={300}>
         <div className="min-h-screen bg-background">
-          <div className="container mx-auto px-4 py-8 max-w-7xl">
-            <div className="mb-8 flex items-start justify-between">
-              <div>
-                <h1 className="text-4xl font-bold tracking-tight mb-2">{UI_TEXT.APP.TITLE}</h1>
-                <p className="text-muted-foreground">{UI_TEXT.APP.SUBTITLE}</p>
+          <div className="container mx-auto px-4 py-4 sm:py-8 max-w-7xl">
+            {/* Header - Stack on mobile */}
+            <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <div className="flex-1">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-1 sm:mb-2">{UI_TEXT.APP.TITLE}</h1>
+                <p className="text-sm sm:text-base text-muted-foreground">{UI_TEXT.APP.SUBTITLE}</p>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
                 <ThemeToggle />
                 <SeedTokensButton onSeed={seedTokens} />
                 <AddTokenDialog onTokenAdded={refreshTokens} />

@@ -58,30 +58,30 @@ export function Pagination({
         </Select>
       </div>
 
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-3 sm:gap-6">
         <span className="text-sm font-medium text-muted-foreground">
           {UI_TEXT.PAGINATION.PAGE_OF(currentPage, totalPages)}
         </span>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <Button
             variant="outline"
             size="sm"
             onClick={() => onPageChange(currentPage - 1)}
             disabled={!canGoPrevious}
-            className="gap-1"
+            className="gap-1 h-8 px-2 sm:px-3"
           >
             <ChevronLeft className="h-4 w-4" />
-            {UI_TEXT.PAGINATION.PREVIOUS}
+            <span className="hidden sm:inline">{UI_TEXT.PAGINATION.PREVIOUS}</span>
           </Button>
           <Button
             variant="outline"
             size="sm"
             onClick={() => onPageChange(currentPage + 1)}
             disabled={!canGoNext}
-            className="gap-1"
+            className="gap-1 h-8 px-2 sm:px-3"
           >
-            {UI_TEXT.PAGINATION.NEXT}
+            <span className="hidden sm:inline">{UI_TEXT.PAGINATION.NEXT}</span>
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>
