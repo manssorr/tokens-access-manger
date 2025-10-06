@@ -14,6 +14,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check Deploy Hook Secret
+        run: |
+          if [ -z "${{ secrets.RENDER_DEPLOY_HOOK_FRONTEND }}" ]; then
+            echo "❌ ERROR: RENDER_DEPLOY_HOOK_FRONTEND secret is not set"
+            echo ""
+            echo "📝 Setup Instructions:"
+            echo "1. Go to Render Dashboard → Your Frontend Static Site → Settings"
+            echo "2. Copy the Deploy Hook URL"
+            echo "3. Go to GitHub Repo → Settings → Secrets and variables → Actions"
+            echo "4. Add secret: RENDER_DEPLOY_HOOK_FRONTEND with the deploy hook URL"
+            echo ""
+            echo "For detailed instructions, see: .github/workflows/README.md"
+            exit 1
+          fi
+
       - name: Trigger Render Deployment
         run: |
-          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_FRONTEND }}"
+          echo "🚀 Triggering frontend deployment to Render..."
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "${{ secrets.RENDER_DEPLOY_HOOK_FRONTEND }}")
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+
+          if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 201 ]; then
+            echo "✅ Deployment triggered successfully (HTTP $HTTP_CODE)"
+          else
+            echo "❌ Deployment failed (HTTP $HTTP_CODE)"
+            echo "$RESPONSE"
+            exit 1
+          fi
