@@ -152,10 +152,10 @@ export function TokenTable({
     <>
       <div className="border rounded-lg overflow-hidden">
         <div className="overflow-x-auto">
-          <Table className="table-fixed min-w-full lg:min-w-0">
+          <Table className="table-fixed w-full min-w-[800px] lg:min-w-full">
             <TableHeader>
               <TableRow>
-                <TableHead className="font-semibold w-[22%] min-w-[150px]">
+                <TableHead className="font-semibold w-[150px] lg:w-[22%]">
                   <button
                     onClick={() => onSort('serviceName')}
                     className="flex items-center hover:text-foreground transition-colors"
@@ -164,8 +164,8 @@ export function TokenTable({
                     <SortIcon field="serviceName" />
                   </button>
                 </TableHead>
-                <TableHead className="font-semibold w-[26%] min-w-[180px]">{UI_TEXT.TABLE.TOKEN}</TableHead>
-                <TableHead className="font-semibold w-[14%] min-w-[110px]">
+                <TableHead className="font-semibold w-[180px] lg:w-[26%]">{UI_TEXT.TABLE.TOKEN}</TableHead>
+                <TableHead className="font-semibold w-[110px] lg:w-[14%]">
                   <button
                     onClick={() => onSort('expiryDate')}
                     className="flex items-center hover:text-foreground transition-colors"
@@ -174,7 +174,7 @@ export function TokenTable({
                     <SortIcon field="expiryDate" />
                   </button>
                 </TableHead>
-                <TableHead className="font-semibold w-[12%] min-w-[100px]">
+                <TableHead className="font-semibold w-[100px] lg:w-[12%]">
                   <button
                     onClick={() => onSort('status')}
                     className="flex items-center hover:text-foreground transition-colors"
@@ -183,7 +183,7 @@ export function TokenTable({
                     <SortIcon field="status" />
                   </button>
                 </TableHead>
-                <TableHead className="font-semibold w-[26%] min-w-[160px] text-right">
+                <TableHead className="font-semibold w-[160px] lg:w-[26%] text-right">
                   {UI_TEXT.TABLE.ACTIONS}
                 </TableHead>
               </TableRow>
@@ -191,12 +191,12 @@ export function TokenTable({
             <TableBody>
               {tokens.map((token) => (
                 <TableRow key={token.id}>
-                  <TableCell className="font-medium w-[22%] min-w-[150px]">{token.serviceName}</TableCell>
-                  <TableCell className="font-mono text-sm text-muted-foreground w-[26%] min-w-[180px]">
+                  <TableCell className="font-medium w-[150px] lg:w-[22%]">{token.serviceName}</TableCell>
+                  <TableCell className="font-mono text-sm text-muted-foreground w-[180px] lg:w-[26%]">
                     {maskToken(token.token)}
                   </TableCell>
-                  <TableCell className="w-[14%] min-w-[110px]">{formatDate(token.expiryDate)}</TableCell>
-                  <TableCell className="w-[12%] min-w-[100px]">
+                  <TableCell className="w-[110px] lg:w-[14%]">{formatDate(token.expiryDate)}</TableCell>
+                  <TableCell className="w-[100px] lg:w-[12%]">
                     <Badge
                       variant={token.status === 'active' ? 'default' : 'destructive'}
                       className={
@@ -208,7 +208,7 @@ export function TokenTable({
                       {token.status}
                     </Badge>
                   </TableCell>
-                  <TableCell className="w-[26%] min-w-[160px] text-right">
+                  <TableCell className="w-[160px] lg:w-[26%] text-right">
                     <div className="flex justify-end gap-2">
                       <RenewButton tokenId={token.id} isRenewing={token.isRenewing} onRenew={onRenew} />
 
