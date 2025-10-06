@@ -35,8 +35,9 @@ jobs:
           RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "${{ secrets.RENDER_DEPLOY_HOOK_FRONTEND }}")
           HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
 
-          if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 201 ]; then
+          if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 201 ] || [ "$HTTP_CODE" -eq 202 ]; then
             echo "✅ Deployment triggered successfully (HTTP $HTTP_CODE)"
+            echo "📦 Render is building and deploying your frontend..."
           else
             echo "❌ Deployment failed (HTTP $HTTP_CODE)"
             echo "$RESPONSE"
